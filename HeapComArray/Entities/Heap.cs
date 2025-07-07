@@ -1,60 +1,101 @@
-public class Heap<T> where T : IComparable<T>
-{
-    public int Tamanho { get; private set; }
-    public T[] ArrayHeap { get; set; }
+using System;
 
-    public Heap()
+public class FilaDePrioridade<T> : IFilaDePrioridade<T> where T : IComparable<T>
+{
+    private T[] heap;
+    private int tamanho;
+
+    public FilaDePrioridade(int capacidade = 100)
     {
-        Tamanho = 0;
-        ArrayHeap = new T[100]; // Inicia com capacidade para 100 elementos
+        heap = new T[capacidade + 1];
+        tamanho = 0;
     }
 
-    // Métodos auxiliares
     public bool IsEmpty()
     {
-        return Tamanho == 0;
+        return tamanho == 0;
     }
 
-    public bool IsFull()
+    public int Size()
     {
-        return Tamanho == ArrayHeap.Length - 1;
+        return tamanho;
     }
 
-    // Inserir novo elemento
     public void Insert(T dado)
     {
-        if (!IsFull())
-        {
-            Tamanho++;
-            ArrayHeap[Tamanho] = dado;
-            UpHeap();
-        }
+        if (tamanho >= heap.Length - 1)
+            throw new InvalidOperationException("Fila cheia");
+
+        tamanho++;
+        heap[tamanho] = dado;
+        UpHeap();
     }
 
-    // Remove a raiz (elemento do topo)
-    public T? Remove()
+    public T Min()
     {
         if (IsEmpty())
-            return default;
+            throw new InvalidOperationException("Fila vazia");
 
-        T raiz = ArrayHeap[1];
-        ArrayHeap[1] = ArrayHeap[Tamanho];
-        Tamanho--;
+        return heap[1];
+    }
+
+    public T RemoveMin()
+    {
+        if (IsEmpty())
+            throw new InvalidOperationException("Fila vazia");
+
+        T min = heap[1];
+        heap[1] = heap[tamanho];
+        tamanho--;
 
         DownHeap();
 
-        return raiz;
+        return min;
     }
 
-    // Sobe o elemento inserido até sua posição correta
-    public void UpHeap()
+    private void UpHeap()
     {
+        int filho = tamanho;
 
+        while (filho > 1)
+        {
+            int pai = filho / 2;
+            if (heap[filho].CompareTo(heap[pai]) < 0)
+            {
+                (heap[filho], heap[pai]) = (heap[pai], heap[filho]);
+                filho = pai;
+            }
+            else
+            {
+                break;
+            }
+        }
     }
 
-    // Desce a raiz trocada até sua posição correta
-    public void DownHeap()
+    private void DownHeap()
     {
+        int pai = 1;
 
+        while (pai * 2 <= tamanho)
+        {
+            int filhoEsq = pai * 2;
+            int filhoDir = filhoEsq + 1;
+            int menorFilho = filhoEsq;
+
+            if (filhoDir <= tamanho && heap[filhoDir].CompareTo(heap[filhoEsq]) < 0)
+            {
+                menorFilho = filhoDir;
+            }
+
+            if (heap[menorFilho].CompareTo(heap[pai]) < 0)
+            {
+                (heap[pai], heap[menorFilho]) = (heap[menorFilho], heap[pai]);
+                pai = menorFilho;
+            }
+            else
+            {
+                break;
+            }
+        }
     }
 }

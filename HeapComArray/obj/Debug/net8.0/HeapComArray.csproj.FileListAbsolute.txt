@@ -1,0 +1,15 @@
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.GeneratedMSBuildEditorConfig.editorconfig
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.AssemblyInfoInputs.cache
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.AssemblyInfo.cs
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.csproj.CoreCompileInputs.cache
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.sourcelink.json
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/bin/Debug/net8.0/HeapComArray
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/bin/Debug/net8.0/HeapComArray.deps.json
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/bin/Debug/net8.0/HeapComArray.runtimeconfig.json
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/bin/Debug/net8.0/HeapComArray.dll
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/bin/Debug/net8.0/HeapComArray.pdb
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.dll
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/refint/HeapComArray.dll
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.pdb
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/HeapComArray.genruntimeconfig.cache
+/home/isaac/Área de trabalho/Heap_com_array/HeapComArray/obj/Debug/net8.0/ref/HeapComArray.dll

@@ -1,11 +1,8 @@
-public interface IHeap<T> where T : IComparable<T>
+public interface IFilaDePrioridade<T> where T : IComparable<T>
 {
-    // Métodos Auxiliares
+    void Insert(T item);
+    T RemoveMin();
+    T Min();
     bool IsEmpty();
-    bool IsFull();
-
-    // Métodos Principais do Heap
-    void Insert(T dado);
-    T? Remove();  // Retorna T ou null (se vazio)
-    void UpHeap();
+    int Size();
 }
